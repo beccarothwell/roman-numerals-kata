@@ -118,3 +118,18 @@ describe("test triple digit numbers", () => {
     expect(convertNumberToNumeral(978)).toBe("CMLXXVIII");
   });
 });
+
+describe("test quadruple digit numbers up to 3000", () => {
+  test("1295 should return 'MCCXCV'", () => {
+    expect(convertNumberToNumeral(1295)).toBe("MCCXCV");
+  });
+  test("2863 should return 'MMDCCCLXIII'", () => {
+    expect(convertNumberToNumeral(2863)).toBe("MMDCCCLXIII");
+  });
+  test("2917 should return 'MMCMXVII'", () => {
+    expect(convertNumberToNumeral(2917)).toBe("MMCMXVII");
+  });
+  test("3000 should return 'MMM'", () => {
+    expect(convertNumberToNumeral(3000)).toBe("MMM");
+  });
+});
