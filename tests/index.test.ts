@@ -58,3 +58,33 @@ describe("test single digit numbers", () => {
     expect(convertNumberToNumeral(9)).toBe("IX");
   });
 });
+
+describe("test double digit numbers", () => {
+  test("12 should return 'XII'", () => {
+    expect(convertNumberToNumeral(12)).toBe("XII");
+  });
+  test("23 should return 'XXIII'", () => {
+    expect(convertNumberToNumeral(23)).toBe("XXIII");
+  });
+  test("34 should return 'XXXIV'", () => {
+    expect(convertNumberToNumeral(34)).toBe("XXXIV");
+  });
+  test("49 should return 'XLIX'", () => {
+    expect(convertNumberToNumeral(49)).toBe("XLIX");
+  });
+  test("58 should return 'LVIII'", () => {
+    expect(convertNumberToNumeral(58)).toBe("LVIII");
+  });
+  test("66 should return 'LXVI'", () => {
+    expect(convertNumberToNumeral(66)).toBe("LXVI");
+  });
+  test("71 should return 'LXXI'", () => {
+    expect(convertNumberToNumeral(71)).toBe("LXXI");
+  });
+  test("85 should return 'LXXXV'", () => {
+    expect(convertNumberToNumeral(85)).toBe("LXXXV");
+  });
+  test("97 should return 'XCVII'", () => {
+    expect(convertNumberToNumeral(97)).toBe("XCVII");
+  });
+});
