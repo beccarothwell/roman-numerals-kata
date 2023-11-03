@@ -88,3 +88,33 @@ describe("test double digit numbers", () => {
     expect(convertNumberToNumeral(97)).toBe("XCVII");
   });
 });
+
+describe("test triple digit numbers", () => {
+  test("129 should return 'CXXIX'", () => {
+    expect(convertNumberToNumeral(12)).toBe("CXXIX");
+  });
+  test("231 should return 'CCXXXI'", () => {
+    expect(convertNumberToNumeral(23)).toBe("CCXXXI");
+  });
+  test("343 should return 'CCCXLIII'", () => {
+    expect(convertNumberToNumeral(34)).toBe("CCCXLIII");
+  });
+  test("497 should return 'CDXCVII'", () => {
+    expect(convertNumberToNumeral(49)).toBe("CDXCVII");
+  });
+  test("582 should return 'DLXXXII'", () => {
+    expect(convertNumberToNumeral(58)).toBe("DLXXXII");
+  });
+  test("664 should return 'DCLXIV'", () => {
+    expect(convertNumberToNumeral(66)).toBe("DCLXIV");
+  });
+  test("715 should return 'DCCXV'", () => {
+    expect(convertNumberToNumeral(71)).toBe("DCCXV");
+  });
+  test("856 should return 'DCCCLVI'", () => {
+    expect(convertNumberToNumeral(85)).toBe("DCCCLVI");
+  });
+  test("978 should return 'CMLXXVIII'", () => {
+    expect(convertNumberToNumeral(97)).toBe("CMLXXVIII");
+  });
+});
