@@ -3,37 +3,30 @@ export function convertNumberToNumeral(num: number) {
     return "The Romans didn't tend to go higher than 3000, so we won't either!";
   }
 
+  const numeralPatternArrs = [
+    ["I", "V", "X"],
+    ["X", "L", "C"],
+    ["C", "D", "M"],
+    ["M", "", ""],
+  ] as const;
+
   const numString = num.toString();
   let numeralString = "";
+  let numeralPatternIndex = 0;
+  for (let i = numString.length - 1; i >= 0; i--) {
+    const digit = Number(numString[i]);
+    const pattern = numeralPatternArrs[numeralPatternIndex] as [
+      string,
+      string,
+      string
+    ];
+    const numeral = numeralPatternHelper(digit, ...pattern);
+    numeralPatternIndex++;
 
-  const singleDigit = Number(numString.at(-1));
-  const singleDigitNumeral = numeralPatternHelper(singleDigit, "I", "V", "X");
-  numeralString = singleDigitNumeral;
-
-  if (num < 10) {
-    return numeralString;
+    numeralString = numeral + numeralString;
   }
 
-  const doubleDigit = Number(numString.at(-2));
-  const doubleDigitNumeral = numeralPatternHelper(doubleDigit, "X", "L", "C");
-  numeralString = doubleDigitNumeral + numeralString;
-
-  if (num < 100) {
-    return numeralString;
-  }
-
-  const tripleDigit = Number(numString.at(-3));
-  const tripleDigitNumeral = numeralPatternHelper(tripleDigit, "C", "D", "M");
-  numeralString = tripleDigitNumeral + numeralString;
-
-  if (num < 1000) {
-    return numeralString;
-  }
-
-  const quadDigit = Number(numString.at(-4));
-  const quadDigitNumeral = "M".repeat(quadDigit);
-
-  return quadDigitNumeral + numeralString;
+  return numeralString;
 }
 
 function numeralPatternHelper(
