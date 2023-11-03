@@ -1,7 +1,9 @@
 export function convertNumberToNumeral(num: number) {
-  const numString = num.toString();
-  const length = numString.length;
+  if (num > 3000) {
+    return "The Romans didn't tend to go higher than 3000, so we won't either!";
+  }
 
+  const numString = num.toString();
   let numeralString = "";
 
   const singleDigit = Number(numString.at(-1));
