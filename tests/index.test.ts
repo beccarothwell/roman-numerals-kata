@@ -35,3 +35,26 @@ describe("test single numerals", () => {
     expect(convertNumberToNumeral(1000)).toBe("M");
   });
 });
+describe("test single digit numbers", () => {
+  test("2 should return 'II'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+  test("3 should return 'III'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+  test("4 should return 'IV'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+  test("6 should return 'VI'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+  test("7 should return 'VII'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+  test("8 should return 'VIII'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+  test("9 should return 'IX'", () => {
+    expect(convertNumberToNumeral(2)).toBe("II");
+  });
+});
