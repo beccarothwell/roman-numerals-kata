@@ -27,6 +27,11 @@ export function convertNumberToNumeral(num: number) {
   if (num < 1000) {
     return numeralString;
   }
+
+  const quadDigit = Number(numString.at(-4));
+  const quadDigitNumeral = "M".repeat(quadDigit);
+
+  return quadDigitNumeral + numeralString;
 }
 
 function numeralPatternHelper(
