@@ -156,3 +156,13 @@ describe("don't convert numbers greater than 3000", () => {
     );
   });
 });
+
+describe("factional numbers", () => {
+  test("throw an error if passed a fractional decimal point number", () => {
+    expect(() => {
+      convertNumberToNumeral(1.1);
+    }).toThrow(
+      "num must be an integer. The Romans did not have decimal point number notation."
+    );
+  });
+});
