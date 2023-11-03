@@ -19,6 +19,14 @@ export function convertNumberToNumeral(num: number) {
   if (num < 100) {
     return numeralString;
   }
+
+  const tripleDigit = Number(numString.at(-3));
+  const tripleDigitNumeral = numeralPatternHelper(tripleDigit, "C", "D", "M");
+  numeralString = tripleDigitNumeral + numeralString;
+
+  if (num < 1000) {
+    return numeralString;
+  }
 }
 
 function numeralPatternHelper(
