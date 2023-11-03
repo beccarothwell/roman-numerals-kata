@@ -4,7 +4,9 @@ export function convertNumberToNumeral(num: number) {
       "num must be an integer. The Romans did not have decimal point number notation."
     );
   if (num > 3000) {
-    return "The Romans didn't tend to go higher than 3000, so we won't either!";
+    throw new Error(
+      "The Romans didn't tend to go higher than 3000, so we won't either!"
+    );
   }
 
   const numerals = ["I", "V", "X", "L", "C", "D", "M"] as const;
