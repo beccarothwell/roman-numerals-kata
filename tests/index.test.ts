@@ -136,22 +136,30 @@ describe("test quadruple digit numbers up to 3000", () => {
 
 describe("don't convert numbers greater than 3000", () => {
   test("3001 should return greater than 3000 message", () => {
-    expect(convertNumberToNumeral(3001)).toBe(
+    expect(() => {
+      convertNumberToNumeral(3001);
+    }).toThrow(
       "The Romans didn't tend to go higher than 3000, so we won't either!"
     );
   });
   test("4000 should return greater than 3000 message", () => {
-    expect(convertNumberToNumeral(4000)).toBe(
+    expect(() => {
+      convertNumberToNumeral(4000);
+    }).toThrow(
       "The Romans didn't tend to go higher than 3000, so we won't either!"
     );
   });
   test("5000 should return greater than 3000 message", () => {
-    expect(convertNumberToNumeral(5000)).toBe(
+    expect(() => {
+      convertNumberToNumeral(5000);
+    }).toThrow(
       "The Romans didn't tend to go higher than 3000, so we won't either!"
     );
   });
   test("30000 should return greater than 3000 message", () => {
-    expect(convertNumberToNumeral(30000)).toBe(
+    expect(() => {
+      convertNumberToNumeral(30000);
+    }).toThrow(
       "The Romans didn't tend to go higher than 3000, so we won't either!"
     );
   });
