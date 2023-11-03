@@ -3,25 +3,27 @@ export function convertNumberToNumeral(num: number) {
     return "The Romans didn't tend to go higher than 3000, so we won't either!";
   }
 
-  const numeralPatternArrs = [
-    ["I", "V", "X"],
-    ["X", "L", "C"],
-    ["C", "D", "M"],
-    ["M", "", ""],
-  ] as const;
+  const numerals = ["I", "V", "X", "L", "C", "D", "M"] as const;
 
   const numString = num.toString();
   let numeralString = "";
-  let numeralPatternIndex = 0;
+
+  let oneNumeralIndex = 0;
+  let fiveNumeralIndex = 1;
+  let tenNumeralIndex = 2;
+
   for (let i = numString.length - 1; i >= 0; i--) {
     const digit = Number(numString[i]);
-    const pattern = numeralPatternArrs[numeralPatternIndex] as [
-      string,
-      string,
-      string
-    ];
-    const numeral = numeralPatternHelper(digit, ...pattern);
-    numeralPatternIndex++;
+    const numeral = numeralPatternHelper(
+      digit,
+      numerals[oneNumeralIndex],
+      numerals[fiveNumeralIndex],
+      numerals[tenNumeralIndex]
+    );
+
+    oneNumeralIndex += 2;
+    fiveNumeralIndex += 2;
+    tenNumeralIndex += 2;
 
     numeralString = numeral + numeralString;
   }
