@@ -91,30 +91,30 @@ describe("test double digit numbers", () => {
 
 describe("test triple digit numbers", () => {
   test("129 should return 'CXXIX'", () => {
-    expect(convertNumberToNumeral(12)).toBe("CXXIX");
+    expect(convertNumberToNumeral(129)).toBe("CXXIX");
   });
   test("231 should return 'CCXXXI'", () => {
-    expect(convertNumberToNumeral(23)).toBe("CCXXXI");
+    expect(convertNumberToNumeral(231)).toBe("CCXXXI");
   });
   test("343 should return 'CCCXLIII'", () => {
-    expect(convertNumberToNumeral(34)).toBe("CCCXLIII");
+    expect(convertNumberToNumeral(343)).toBe("CCCXLIII");
   });
   test("497 should return 'CDXCVII'", () => {
-    expect(convertNumberToNumeral(49)).toBe("CDXCVII");
+    expect(convertNumberToNumeral(497)).toBe("CDXCVII");
   });
   test("582 should return 'DLXXXII'", () => {
-    expect(convertNumberToNumeral(58)).toBe("DLXXXII");
+    expect(convertNumberToNumeral(582)).toBe("DLXXXII");
   });
   test("664 should return 'DCLXIV'", () => {
-    expect(convertNumberToNumeral(66)).toBe("DCLXIV");
+    expect(convertNumberToNumeral(664)).toBe("DCLXIV");
   });
   test("715 should return 'DCCXV'", () => {
-    expect(convertNumberToNumeral(71)).toBe("DCCXV");
+    expect(convertNumberToNumeral(715)).toBe("DCCXV");
   });
   test("856 should return 'DCCCLVI'", () => {
-    expect(convertNumberToNumeral(85)).toBe("DCCCLVI");
+    expect(convertNumberToNumeral(856)).toBe("DCCCLVI");
   });
   test("978 should return 'CMLXXVIII'", () => {
-    expect(convertNumberToNumeral(97)).toBe("CMLXXVIII");
+    expect(convertNumberToNumeral(978)).toBe("CMLXXVIII");
   });
 });
