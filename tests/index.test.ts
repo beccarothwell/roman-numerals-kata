@@ -40,21 +40,21 @@ describe("test single digit numbers", () => {
     expect(convertNumberToNumeral(2)).toBe("II");
   });
   test("3 should return 'III'", () => {
-    expect(convertNumberToNumeral(2)).toBe("II");
+    expect(convertNumberToNumeral(3)).toBe("III");
   });
   test("4 should return 'IV'", () => {
-    expect(convertNumberToNumeral(2)).toBe("II");
+    expect(convertNumberToNumeral(4)).toBe("IV");
   });
   test("6 should return 'VI'", () => {
-    expect(convertNumberToNumeral(2)).toBe("II");
+    expect(convertNumberToNumeral(6)).toBe("VI");
   });
   test("7 should return 'VII'", () => {
-    expect(convertNumberToNumeral(2)).toBe("II");
+    expect(convertNumberToNumeral(7)).toBe("VII");
   });
   test("8 should return 'VIII'", () => {
-    expect(convertNumberToNumeral(2)).toBe("II");
+    expect(convertNumberToNumeral(8)).toBe("VIII");
   });
   test("9 should return 'IX'", () => {
-    expect(convertNumberToNumeral(2)).toBe("II");
+    expect(convertNumberToNumeral(9)).toBe("IX");
   });
 });
