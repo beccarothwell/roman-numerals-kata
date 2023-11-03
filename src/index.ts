@@ -1,24 +1,24 @@
 export function convertNumberToNumeral(num: number) {
-  /*switch (num) {
-    case 1:
-      return "I";
-    case 5:
-      return "V";
-    case 10:
-      return "X";
-    case 50:
-      return "L";
-    case 100:
-      return "C";
-    case 500:
-      return "D";
-    case 1000:
-      return "M";
-    default:
-      return "Cannot parse this number to numeral yet";
-  }*/
+  const numString = num.toString();
+  const length = numString.length;
 
-  return numeralPatternHelper(num, "I", "V", "X");
+  let numeralString = "";
+
+  const singleDigit = Number(numString.at(-1));
+  const singleDigitNumeral = numeralPatternHelper(singleDigit, "I", "V", "X");
+  numeralString = singleDigitNumeral;
+
+  if (num < 10) {
+    return numeralString;
+  }
+
+  const doubleDigit = Number(numString.at(-2));
+  const doubleDigitNumeral = numeralPatternHelper(doubleDigit, "X", "L", "C");
+  numeralString = doubleDigitNumeral + numeralString;
+
+  if (num < 100) {
+    return numeralString;
+  }
 }
 
 function numeralPatternHelper(
@@ -36,7 +36,7 @@ function numeralPatternHelper(
   } else if (num === 5) {
     numeralString = five;
   } else if (num <= 8) {
-    numeralString = five + one.repeat(num);
+    numeralString = five + one.repeat(num - 5);
   } else if (num === 9) {
     numeralString = one + ten;
   }
