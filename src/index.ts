@@ -1,5 +1,5 @@
 export function convertNumberToNumeral(num: number) {
-  switch (num) {
+  /*switch (num) {
     case 1:
       return "I";
     case 5:
@@ -16,5 +16,30 @@ export function convertNumberToNumeral(num: number) {
       return "M";
     default:
       return "Cannot parse this number to numeral yet";
+  }*/
+
+  return numeralPatternHelper(num, "I", "V", "X");
+}
+
+function numeralPatternHelper(
+  num: number,
+  one: string,
+  five: string,
+  ten: string
+) {
+  let numeralString = "";
+
+  if (num <= 3) {
+    numeralString = one.repeat(num);
+  } else if (num === 4) {
+    numeralString = one + five;
+  } else if (num === 5) {
+    numeralString = five;
+  } else if (num <= 8) {
+    numeralString = five + one.repeat(num);
+  } else if (num === 9) {
+    numeralString = one + ten;
   }
+
+  return numeralString;
 }
