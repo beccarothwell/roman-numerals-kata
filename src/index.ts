@@ -4,16 +4,12 @@ export function convertNumberToNumeral(num: number) {
   }
 
   const numerals = ["I", "V", "X", "L", "C", "D", "M"] as const;
-
-  const numString = num.toString();
-  let numeralString = "";
-
   let oneNumeralIndex = 0;
   let fiveNumeralIndex = 1;
   let tenNumeralIndex = 2;
 
-  for (let i = numString.length - 1; i >= 0; i--) {
-    const digit = Number(numString[i]);
+  return [...num.toString()].reduceRight((accString, currVal) => {
+    const digit = Number(currVal);
     const numeral = numeralPatternHelper(
       digit,
       numerals[oneNumeralIndex],
@@ -25,10 +21,8 @@ export function convertNumberToNumeral(num: number) {
     fiveNumeralIndex += 2;
     tenNumeralIndex += 2;
 
-    numeralString = numeral + numeralString;
-  }
-
-  return numeralString;
+    return numeral + accString;
+  }, "");
 }
 
 function numeralPatternHelper(
