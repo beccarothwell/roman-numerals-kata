@@ -1,4 +1,8 @@
 export function convertNumberToNumeral(num: number) {
+  if (!Number.isInteger(num))
+    throw new Error(
+      "num must be an integer. The Romans did not have decimal point number notation."
+    );
   if (num > 3000) {
     return "The Romans didn't tend to go higher than 3000, so we won't either!";
   }
