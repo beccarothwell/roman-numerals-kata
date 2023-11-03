@@ -10,7 +10,7 @@ export function convertNumberToNumeral(num: number) {
 
   return [...num.toString()].reduceRight((accString, currVal) => {
     const digit = Number(currVal);
-    const numeral = numeralPatternHelper(
+    const numeral = oneToNineNumeralPattern(
       digit,
       numerals[oneNumeralIndex],
       numerals[fiveNumeralIndex],
@@ -25,24 +25,24 @@ export function convertNumberToNumeral(num: number) {
   }, "");
 }
 
-function numeralPatternHelper(
+function oneToNineNumeralPattern(
   num: number,
-  one: string,
-  five: string,
-  ten: string
+  oneNumeral: string,
+  fiveNumeral: string,
+  tenNumeral: string
 ) {
   let numeralString = "";
 
   if (num <= 3) {
-    numeralString = one.repeat(num);
+    numeralString = oneNumeral.repeat(num);
   } else if (num === 4) {
-    numeralString = one + five;
+    numeralString = oneNumeral + fiveNumeral;
   } else if (num === 5) {
-    numeralString = five;
+    numeralString = fiveNumeral;
   } else if (num <= 8) {
-    numeralString = five + one.repeat(num - 5);
+    numeralString = fiveNumeral + oneNumeral.repeat(num - 5);
   } else if (num === 9) {
-    numeralString = one + ten;
+    numeralString = oneNumeral + tenNumeral;
   }
 
   return numeralString;
